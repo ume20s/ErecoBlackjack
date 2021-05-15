@@ -47,6 +47,7 @@ namespace EreBla
             this.PictMuiBig.Location = new System.Drawing.Point(416, 154);
             this.PictMuiBig.Name = "PictMuiBig";
             this.PictMuiBig.Size = new System.Drawing.Size(300, 400);
+            this.PictMuiBig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictMuiBig.TabIndex = 0;
             this.PictMuiBig.TabStop = false;
             this.PictMuiBig.Visible = false;
@@ -72,6 +73,7 @@ namespace EreBla
             this.PictMuiSmall.Location = new System.Drawing.Point(416, 164);
             this.PictMuiSmall.Name = "PictMuiSmall";
             this.PictMuiSmall.Size = new System.Drawing.Size(280, 380);
+            this.PictMuiSmall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictMuiSmall.TabIndex = 2;
             this.PictMuiSmall.TabStop = false;
             this.PictMuiSmall.MouseEnter += new System.EventHandler(this.PictEleSmall_MouseEnter);
@@ -82,6 +84,7 @@ namespace EreBla
             this.PictEreBig.Location = new System.Drawing.Point(35, 154);
             this.PictEreBig.Name = "PictEreBig";
             this.PictEreBig.Size = new System.Drawing.Size(300, 400);
+            this.PictEreBig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictEreBig.TabIndex = 3;
             this.PictEreBig.TabStop = false;
             this.PictEreBig.Visible = false;
@@ -97,6 +100,7 @@ namespace EreBla
             this.PictEreSmall.Location = new System.Drawing.Point(45, 164);
             this.PictEreSmall.Name = "PictEreSmall";
             this.PictEreSmall.Size = new System.Drawing.Size(280, 380);
+            this.PictEreSmall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictEreSmall.TabIndex = 4;
             this.PictEreSmall.TabStop = false;
             this.PictEreSmall.MouseEnter += new System.EventHandler(this.PictEreSmall_MouseEnter);

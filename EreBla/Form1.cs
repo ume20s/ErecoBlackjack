@@ -20,10 +20,11 @@ namespace EreBla
         System.Media.SoundPlayer BGMplayer;     // セリフ再生オブジェクト
 
         // セリフ再生用NAudioオブジェクト
-        NAudio.Wave.WaveOut player = new NAudio.Wave.WaveOut();
+        private NAudio.Wave.WaveOut player = new NAudio.Wave.WaveOut();
 
         public CharacterSelect()
         {
+            // もとからあった初期化
             InitializeComponent();
 
             // ループBGMの再生開始
@@ -88,7 +89,7 @@ namespace EreBla
         {
             // カーソルをオリジナルのものに変更
             System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
-            Cursor myCursor = new Cursor(asm.GetManifestResourceStream(asm.GetName().Name + ".Resources.cursor.cur"));
+            Cursor myCursor = new Cursor(asm.GetManifestResourceStream(asm.GetName().Name + ".Resources.hand_cursor.cur"));
             this.Cursor = myCursor;
 
             // キャラクタの初期化

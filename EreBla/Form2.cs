@@ -22,7 +22,7 @@ namespace EreBla
             SplashScreen ss = new SplashScreen();
             ss.Show();
             ss.Refresh();
-            Thread.Sleep(3500);
+            Thread.Sleep(3200);
             ss.Close();
             ss.Dispose();
 
