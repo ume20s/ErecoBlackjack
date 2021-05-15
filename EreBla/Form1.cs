@@ -16,8 +16,8 @@ namespace EreBla
     public partial class CharacterSelect : Form
     {
         public GameMain mm;                     // メインにキャラクタ番号を受け渡すためのオブジェクト
-        System.IO.Stream selectBGM;             // セリフ用IOストリーム
-        System.Media.SoundPlayer BGMplayer;     // セリフ再生オブジェクト
+        System.IO.Stream selectBGM;             // BGM用IOストリーム
+        System.Media.SoundPlayer BGMplayer;     // BGM再生オブジェクト
 
         // セリフ再生用NAudioオブジェクト
         private NAudio.Wave.WaveOut player = new NAudio.Wave.WaveOut();
@@ -129,7 +129,7 @@ namespace EreBla
             await Task.Delay(300);
             PictEreBig.Image = Properties.Resources.ere_select3;
             PictEreSmall.Image = Properties.Resources.ere_select3;
-            await Task.Delay(1000);
+            await Task.Delay(1500);
         }
 
         // むいちゃん選択
@@ -165,7 +165,7 @@ namespace EreBla
             await Task.Delay(300);
             PictMuiBig.Image = Properties.Resources.mui_select3;
             PictMuiSmall.Image = Properties.Resources.mui_select3;
-            await Task.Delay(1000);
+            await Task.Delay(1500);
         }
 
         // セリフ音声の再生
@@ -179,6 +179,7 @@ namespace EreBla
             while (player.PlaybackState == PlaybackState.Playing) {
                 await Task.Delay(10);
             }
+            player.Dispose();
         }
     }
 }

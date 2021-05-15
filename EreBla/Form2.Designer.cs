@@ -37,7 +37,7 @@ namespace EreBla
             // 
             this.TestLabel.AutoSize = true;
             this.TestLabel.Font = new System.Drawing.Font("Yu Gothic UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TestLabel.Location = new System.Drawing.Point(158, 131);
+            this.TestLabel.Location = new System.Drawing.Point(205, 173);
             this.TestLabel.Name = "TestLabel";
             this.TestLabel.Size = new System.Drawing.Size(296, 86);
             this.TestLabel.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace EreBla
             // RestartButton
             // 
             this.RestartButton.Font = new System.Drawing.Font("Yu Gothic UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RestartButton.Location = new System.Drawing.Point(205, 307);
+            this.RestartButton.Location = new System.Drawing.Point(253, 377);
             this.RestartButton.Name = "RestartButton";
             this.RestartButton.Size = new System.Drawing.Size(194, 61);
             this.RestartButton.TabIndex = 1;
@@ -58,11 +58,12 @@ namespace EreBla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 407);
+            this.ClientSize = new System.Drawing.Size(754, 611);
             this.Controls.Add(this.RestartButton);
             this.Controls.Add(this.TestLabel);
             this.Name = "GameMain";
             this.Text = "エレ子のブラックジャック";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GameMain_FormClosed);
             this.Load += new System.EventHandler(this.GameMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

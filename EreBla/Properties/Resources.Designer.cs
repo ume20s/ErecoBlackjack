@@ -63,6 +63,42 @@ namespace EreBla.Properties {
         /// <summary>
         ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream BGMere1 {
+            get {
+                return ResourceManager.GetStream("BGMere1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream BGMere2 {
+            get {
+                return ResourceManager.GetStream("BGMere2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream BGMmui1 {
+            get {
+                return ResourceManager.GetStream("BGMmui1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream BGMmui2 {
+            get {
+                return ResourceManager.GetStream("BGMmui2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream BGMselect11 {
             get {
                 return ResourceManager.GetStream("BGMselect11", resourceCulture);

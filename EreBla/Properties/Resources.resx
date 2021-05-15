@@ -166,4 +166,16 @@
   <data name="hand_cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hand_cursor.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="BGMere1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BGMere1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BGMere2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BGMere2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BGMmui1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BGMmui1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BGMmui2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BGMmui2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

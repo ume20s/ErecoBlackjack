@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\BGMere1.wav" />
+    <None Remove="Resources\BGMere2.wav" />
+    <None Remove="Resources\BGMmui1.wav" />
+    <None Remove="Resources\BGMmui2.wav" />
     <None Remove="Resources\hand_cursor.cur" />
     <None Remove="Resources\selectE.mp3" />
     <None Remove="Resources\selectM.mp3" />
@@ -15,6 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\BGMere1.wav" />
+    <EmbeddedResource Include="Resources\BGMere2.wav" />
+    <EmbeddedResource Include="Resources\BGMmui1.wav" />
+    <EmbeddedResource Include="Resources\BGMmui2.wav" />
     <EmbeddedResource Include="Resources\hand_cursor.cur" />
     <EmbeddedResource Include="Resources\selectE.mp3" />
     <EmbeddedResource Include="Resources\selectM.mp3" />
