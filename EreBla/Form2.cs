@@ -57,5 +57,22 @@ namespace EreBla
             }
         }
 
+        // もういっかいやるボタン
+        private void RestartButton_Click(object sender, EventArgs e)
+        {
+            // 自分自身を隠して
+            this.Hide();
+
+            // キャラクタ選択画面の表示
+            CharacterSelect cs = new CharacterSelect() {
+                mm = this
+            };
+            cs.ShowDialog();
+            cs.Dispose();
+
+            // ゲーム開始
+            this.Show();
+            PlayGame();
+        }
     }
 }

@@ -7,51 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\BGMere1.wav" />
-    <None Remove="Resources\BGMere2.wav" />
-    <None Remove="Resources\BGMmui1.wav" />
-    <None Remove="Resources\BGMmui2.wav" />
-    <None Remove="Resources\BGMselect1.wav" />
-    <None Remove="Resources\BGMselect2.wav" />
     <None Remove="Resources\cursor.cur" />
-    <None Remove="Resources\loseE1.wav" />
-    <None Remove="Resources\loseE2.wav" />
-    <None Remove="Resources\loseM1.wav" />
-    <None Remove="Resources\loseM2.wav" />
-    <None Remove="Resources\playE.wav" />
-    <None Remove="Resources\playM.wav" />
-    <None Remove="Resources\selectE.wav" />
-    <None Remove="Resources\selectM.wav" />
+    <None Remove="Resources\selectE.mp3" />
+    <None Remove="Resources\selectM.mp3" />
     <None Remove="Resources\titleE.wav" />
     <None Remove="Resources\titleM.wav" />
-    <None Remove="Resources\winE1.wav" />
-    <None Remove="Resources\winE2.wav" />
-    <None Remove="Resources\winM1.wav" />
-    <None Remove="Resources\winM2.wav" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\BGMere1.wav" />
-    <EmbeddedResource Include="Resources\BGMere2.wav" />
-    <EmbeddedResource Include="Resources\BGMmui1.wav" />
-    <EmbeddedResource Include="Resources\BGMmui2.wav" />
-    <EmbeddedResource Include="Resources\BGMselect1.wav" />
-    <EmbeddedResource Include="Resources\BGMselect2.wav" />
     <EmbeddedResource Include="Resources\cursor.cur" />
-    <EmbeddedResource Include="Resources\loseE1.wav" />
-    <EmbeddedResource Include="Resources\loseE2.wav" />
-    <EmbeddedResource Include="Resources\loseM1.wav" />
-    <EmbeddedResource Include="Resources\loseM2.wav" />
-    <EmbeddedResource Include="Resources\playE.wav" />
-    <EmbeddedResource Include="Resources\playM.wav" />
-    <EmbeddedResource Include="Resources\selectE.wav" />
-    <EmbeddedResource Include="Resources\selectM.wav" />
+    <EmbeddedResource Include="Resources\selectE.mp3" />
+    <EmbeddedResource Include="Resources\selectM.mp3" />
     <EmbeddedResource Include="Resources\titleE.wav" />
     <EmbeddedResource Include="Resources\titleM.wav" />
-    <EmbeddedResource Include="Resources\winE1.wav" />
-    <EmbeddedResource Include="Resources\winE2.wav" />
-    <EmbeddedResource Include="Resources\winM1.wav" />
-    <EmbeddedResource Include="Resources\winM2.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>

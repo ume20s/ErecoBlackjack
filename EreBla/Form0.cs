@@ -20,17 +20,17 @@ namespace EreBla
         private void SplashScreen_Load(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;     // 日付時刻取得用構造体
-            System.IO.Stream strm;          // 音声再生用IOストリーム
+            System.IO.Stream titlecall;     // タイトルコール用IOストリーム
 
             // 取得時刻の秒が偶数だったらエレ子そうじゃなかったらむいちゃん
-            if (dt.Second % 2 == 0) { 
-                strm = Properties.Resources.titleE;
+            if (dt.Second % 2 == 0) {
+                titlecall = Properties.Resources.titleE;
             } else {
-                strm = Properties.Resources.titleM;
+                titlecall = Properties.Resources.titleM;
             }
 
             // リソースを取得して音声再生
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(strm);
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(titlecall);
             player.Play();
             player.Dispose();
         }

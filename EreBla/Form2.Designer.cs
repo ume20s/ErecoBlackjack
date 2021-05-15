@@ -30,6 +30,7 @@ namespace EreBla
         private void InitializeComponent()
         {
             this.TestLabel = new System.Windows.Forms.Label();
+            this.RestartButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TestLabel
@@ -42,11 +43,23 @@ namespace EreBla
             this.TestLabel.TabIndex = 0;
             this.TestLabel.Text = "TestLabel";
             // 
+            // RestartButton
+            // 
+            this.RestartButton.Font = new System.Drawing.Font("Yu Gothic UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RestartButton.Location = new System.Drawing.Point(205, 307);
+            this.RestartButton.Name = "RestartButton";
+            this.RestartButton.Size = new System.Drawing.Size(194, 61);
+            this.RestartButton.TabIndex = 1;
+            this.RestartButton.Text = "もういっかい";
+            this.RestartButton.UseVisualStyleBackColor = true;
+            this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
+            // 
             // GameMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 407);
+            this.Controls.Add(this.RestartButton);
             this.Controls.Add(this.TestLabel);
             this.Name = "GameMain";
             this.Text = "エレ子のブラックジャック";
@@ -59,5 +72,6 @@ namespace EreBla
         #endregion
 
         private System.Windows.Forms.Label TestLabel;
+        private System.Windows.Forms.Button RestartButton;
     }
 }

@@ -63,54 +63,18 @@ namespace EreBla.Properties {
         /// <summary>
         ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream BGMere1 {
+        internal static System.IO.UnmanagedMemoryStream BGMselect11 {
             get {
-                return ResourceManager.GetStream("BGMere1", resourceCulture);
+                return ResourceManager.GetStream("BGMselect11", resourceCulture);
             }
         }
         
         /// <summary>
         ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream BGMere2 {
+        internal static System.IO.UnmanagedMemoryStream BGMselect21 {
             get {
-                return ResourceManager.GetStream("BGMere2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream BGMmui1 {
-            get {
-                return ResourceManager.GetStream("BGMmui1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream BGMmui2 {
-            get {
-                return ResourceManager.GetStream("BGMmui2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream BGMselect1 {
-            get {
-                return ResourceManager.GetStream("BGMselect1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream BGMselect2 {
-            get {
-                return ResourceManager.GetStream("BGMselect2", resourceCulture);
+                return ResourceManager.GetStream("BGMselect21", resourceCulture);
             }
         }
         
@@ -165,42 +129,6 @@ namespace EreBla.Properties {
         }
         
         /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream loseE1 {
-            get {
-                return ResourceManager.GetStream("loseE1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream loseE2 {
-            get {
-                return ResourceManager.GetStream("loseE2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream loseM1 {
-            get {
-                return ResourceManager.GetStream("loseM1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream loseM2 {
-            get {
-                return ResourceManager.GetStream("loseM2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
         internal static System.Drawing.Bitmap mui_select1 {
@@ -241,38 +169,22 @@ namespace EreBla.Properties {
         }
         
         /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream playE {
+        internal static byte[] selectE {
             get {
-                return ResourceManager.GetStream("playE", resourceCulture);
+                object obj = ResourceManager.GetObject("selectE", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
+        ///   型 System.Byte[] のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream playM {
+        internal static byte[] selectM {
             get {
-                return ResourceManager.GetStream("playM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream selectE {
-            get {
-                return ResourceManager.GetStream("selectE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream selectM {
-            get {
-                return ResourceManager.GetStream("selectM", resourceCulture);
+                object obj = ResourceManager.GetObject("selectM", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -291,42 +203,6 @@ namespace EreBla.Properties {
         internal static System.IO.UnmanagedMemoryStream titleM {
             get {
                 return ResourceManager.GetStream("titleM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream winE1 {
-            get {
-                return ResourceManager.GetStream("winE1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream winE2 {
-            get {
-                return ResourceManager.GetStream("winE2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream winM1 {
-            get {
-                return ResourceManager.GetStream("winM1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream winM2 {
-            get {
-                return ResourceManager.GetStream("winM2", resourceCulture);
             }
         }
     }
