@@ -407,6 +407,16 @@ namespace EreBla.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap ere_play {
+            get {
+                object obj = ResourceManager.GetObject("ere_play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap ere_select1 {
             get {
                 object obj = ResourceManager.GetObject("ere_select1", resourceCulture);
@@ -587,6 +597,16 @@ namespace EreBla.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap mui_play {
+            get {
+                object obj = ResourceManager.GetObject("mui_play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap mui_select1 {
             get {
                 object obj = ResourceManager.GetObject("mui_select1", resourceCulture);
@@ -620,26 +640,6 @@ namespace EreBla.Properties {
         internal static System.Drawing.Bitmap mui_waiting {
             get {
                 object obj = ResourceManager.GetObject("mui_waiting", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap Play_ere {
-            get {
-                object obj = ResourceManager.GetObject("Play_ere", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap Play_mui {
-            get {
-                object obj = ResourceManager.GetObject("Play_mui", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

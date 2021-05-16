@@ -77,11 +77,11 @@ namespace EreBla
                     break;
                 case 1:             // エレ子とゲーム
                     playBGM = Properties.Resources.BGMere1;
-                    CharaPict.Image = Properties.Resources.Play_ere;
+                    CharaPict.Image = Properties.Resources.ere_play;
                     break;
                 case 2:             // むいとゲーム
                     playBGM = Properties.Resources.BGMmui1;
-                    CharaPict.Image = Properties.Resources.Play_mui;
+                    CharaPict.Image = Properties.Resources.mui_play;
                     break;
                 default:            // ここには来ないはずだけど
                     this.Close();

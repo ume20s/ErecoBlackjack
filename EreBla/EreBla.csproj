@@ -39,6 +39,7 @@
     <None Remove="Resources\d11.png" />
     <None Remove="Resources\d12.png" />
     <None Remove="Resources\d13.png" />
+    <None Remove="Resources\ere_play.gif" />
     <None Remove="Resources\h01.png" />
     <None Remove="Resources\h02.png" />
     <None Remove="Resources\h03.png" />
@@ -53,8 +54,7 @@
     <None Remove="Resources\h12.png" />
     <None Remove="Resources\h13.png" />
     <None Remove="Resources\hand_cursor.cur" />
-    <None Remove="Resources\Play_ere.png" />
-    <None Remove="Resources\Play_mui.png" />
+    <None Remove="Resources\mui_play.gif" />
     <None Remove="Resources\s01.png" />
     <None Remove="Resources\s02.png" />
     <None Remove="Resources\s03.png" />
@@ -107,6 +107,7 @@
     <EmbeddedResource Include="Resources\d11.png" />
     <EmbeddedResource Include="Resources\d12.png" />
     <EmbeddedResource Include="Resources\d13.png" />
+    <EmbeddedResource Include="Resources\ere_play.gif" />
     <EmbeddedResource Include="Resources\h01.png" />
     <EmbeddedResource Include="Resources\h02.png" />
     <EmbeddedResource Include="Resources\h03.png" />
@@ -121,8 +122,7 @@
     <EmbeddedResource Include="Resources\h12.png" />
     <EmbeddedResource Include="Resources\h13.png" />
     <EmbeddedResource Include="Resources\hand_cursor.cur" />
-    <EmbeddedResource Include="Resources\Play_ere.png" />
-    <EmbeddedResource Include="Resources\Play_mui.png" />
+    <EmbeddedResource Include="Resources\mui_play.gif" />
     <EmbeddedResource Include="Resources\s01.png" />
     <EmbeddedResource Include="Resources\s02.png" />
     <EmbeddedResource Include="Resources\s03.png" />
