@@ -110,12 +110,14 @@ namespace EreBla
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(145)))));
-            this.ClientSize = new System.Drawing.Size(754, 611);
+            this.ClientSize = new System.Drawing.Size(754, 651);
             this.Controls.Add(this.PictEreBig);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.PictMuiBig);
             this.Controls.Add(this.PictMuiSmall);
             this.Controls.Add(this.PictEreSmall);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CharacterSelect";
             this.Text = "エレ子のブラックジャック";
             this.Load += new System.EventHandler(this.Form1_Load);

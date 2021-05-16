@@ -16,11 +16,11 @@ namespace EreBla
     public partial class CharacterSelect : Form
     {
         public GameMain mm;                     // メインにキャラクタ番号を受け渡すためのオブジェクト
-        System.IO.Stream selectBGM;             // BGM用IOストリーム
-        System.Media.SoundPlayer BGMplayer;     // BGM再生オブジェクト
+        private System.IO.Stream selectBGM;                 // BGM用IOストリーム
+        private System.Media.SoundPlayer selectBGMplayer;   // BGM再生オブジェクト
 
         // セリフ再生用NAudioオブジェクト
-        private NAudio.Wave.WaveOut player = new NAudio.Wave.WaveOut();
+//        private NAudio.Wave.WaveOut player = new NAudio.Wave.WaveOut();
 
         public CharacterSelect()
         {
@@ -29,8 +29,8 @@ namespace EreBla
 
             // ループBGMの再生開始
             selectBGM = Properties.Resources.BGMselect11;
-            BGMplayer = new System.Media.SoundPlayer(selectBGM);
-            BGMplayer.PlayLooping();
+            selectBGMplayer = new System.Media.SoundPlayer(selectBGM);
+            selectBGMplayer.PlayLooping();
         }
 
         // カーソル処理関連
@@ -103,18 +103,18 @@ namespace EreBla
             mm.chara = 1;
 
             // ループBGMをとめる
-            BGMplayer.Stop();
-            BGMplayer.Dispose();
+            selectBGMplayer.Stop();
+            selectBGMplayer.Dispose();
 
             // リソースを取得して選択終了BGM再生
             selectBGM = Properties.Resources.BGMselect21;
-            BGMplayer = new System.Media.SoundPlayer(selectBGM);
-            BGMplayer.Play();
+            selectBGMplayer = new System.Media.SoundPlayer(selectBGM);
+            selectBGMplayer.Play();
 
             // エレ子よろこんで選択画面終了
             Speach("selectE");
             await EreSelected();
-            BGMplayer.Dispose();
+            selectBGMplayer.Dispose();
             this.Close();
         }
 
@@ -139,18 +139,18 @@ namespace EreBla
             mm.chara = 2;
 
             //  ループBGMをとめる
-            BGMplayer.Stop();
-            BGMplayer.Dispose();
+            selectBGMplayer.Stop();
+            selectBGMplayer.Dispose();
 
             // リソースを取得して選択終了BGM再生
             selectBGM = Properties.Resources.BGMselect21;
-            BGMplayer = new System.Media.SoundPlayer(selectBGM);
-            BGMplayer.Play();
+            selectBGMplayer = new System.Media.SoundPlayer(selectBGM);
+            selectBGMplayer.Play();
 
             // むいちゃんとまどって選択画面終了
             Speach("selectM");
             await MuiSelected();
-            BGMplayer.Dispose();
+            selectBGMplayer.Dispose();
             this.Close();
         }
 
@@ -171,6 +171,9 @@ namespace EreBla
         // セリフ音声の再生
         private async void Speach(string s)
         {
+            NAudio.Wave.WaveOut player;
+
+            player = new NAudio.Wave.WaveOut(); 
             byte[] buffer = (byte[])Properties.Resources.ResourceManager.GetObject(s);
             using var stream = new MemoryStream(buffer);
             using WaveStream pcm = new Mp3FileReader(stream);
