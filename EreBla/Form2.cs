@@ -67,8 +67,12 @@ namespace EreBla
         // ゲームメインルーチン
         private void PlayGame()
         {
-            // 消えてるかもしれないので交換ボタン表示
+            // 消えてるかもしれないのでボタン表示
             ButtonChange.Visible = true;
+            ButtonChallenge.Visible = true;
+
+            // プレイヤーラベル表示
+            LabelPlayer.Text = "Player";
 
             // キャラによるループBGMとイメージを設定
             switch (chara) {
@@ -76,10 +80,12 @@ namespace EreBla
                     this.Close();   // 誰も選んでいない
                     break;
                 case 1:             // エレ子とゲーム
+                    LabelDealer.Text = "エレ子";
                     playBGM = Properties.Resources.BGMere1;
                     CharaPict.Image = Properties.Resources.ere_play;
                     break;
                 case 2:             // むいとゲーム
+                    LabelDealer.Text = "むいちゃん";
                     playBGM = Properties.Resources.BGMmui1;
                     CharaPict.Image = Properties.Resources.mui_play;
                     break;
@@ -92,17 +98,21 @@ namespace EreBla
             playBGMplayer = new System.Media.SoundPlayer(playBGM);
             playBGMplayer.PlayLooping();
 
-            // キャラの２枚
+            // キャラの２枚（乱数）
             CharaCard[0] = r.Next(0,25);
             CharaCard[1] = (CharaCard[0] + r.Next(1,24)) % 26;
 
-            // プレイヤーの２枚
+            // プレイヤーの２枚（乱数）
             PlayerCard[0] = r.Next(0, 25);
-            PlayerCard[1] = (CharaCard[0] + r.Next(1,23)) % 26;
+            PlayerCard[1] = (PlayerCard[0] + r.Next(1,23)) % 26;
 
-            // プレイヤーカードの表示
-            CardPict1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[0] / 13), (int)(PlayerCard[0] % 13)]);
-            CardPict2.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[1] / 13), (int)(PlayerCard[1] % 13)]);
+            // キャラカードの表示（１枚は表、１枚は裏）
+            CardPictChara1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(CharaCard[0] / 13) + 2, (int)(CharaCard[0] % 13)]);
+            CardPictChara2.Image = (System.Drawing.Image)Properties.Resources.card_ura;
+
+            // プレイヤーカードの表示（２枚とも表）
+            CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[0] / 13), (int)(PlayerCard[0] % 13)]);
+            CardPictPlayer2.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[1] / 13), (int)(PlayerCard[1] % 13)]);
         }
 
         // もういっかいやるボタン（動作確認用）
@@ -111,14 +121,14 @@ namespace EreBla
             // 自分自身を隠して
             this.Hide();
 
-            // キャラクタ選択画面の表示
+            // キャラ選択画面の表示
             CharacterSelect cs = new CharacterSelect() {
                 mm = this
             };
             cs.ShowDialog();
             cs.Dispose();
 
-            // キャラクタ選択されていたらゲーム開始
+            // キャラ選択されていたらゲーム開始
             if (chara == 1 || chara == 2) {
                 this.Show();
                 PlayGame();
@@ -137,18 +147,68 @@ namespace EreBla
             }
         }
 
+        // 交換ボタンが押されたら
         private void ButtonChange_Click(object sender, EventArgs e)
         {
-            // プレイヤーの２枚
+            // プレイヤーの２枚（乱数）
             PlayerCard[0] = r.Next(0, 25);
             PlayerCard[1] = (CharaCard[0] + r.Next(1, 23)) % 26;
 
-            // プレイヤーカードの表示
-            CardPict1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[0] / 13), (int)(PlayerCard[0] % 13)]);
-            CardPict2.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[1] / 13), (int)(PlayerCard[1] % 13)]);
+            // プレイヤーカードの表示（２枚とも表）
+            CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[0] / 13), (int)(PlayerCard[0] % 13)]);
+            CardPictPlayer2.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[1] / 13), (int)(PlayerCard[1] % 13)]);
 
-            // 交換は１回だけ
+            // 交換は１回だけなので交換ボタンを非表示にする
             ButtonChange.Visible = false;
+        }
+
+        // 勝負ボタンが押されたら
+        private async void ButtonChallenge_Click(object sender, EventArgs e)
+        {
+            int i;
+            int chara_pt;           // キャラの値
+            int player_pt;          // プレイヤーの値
+
+            // ボタン関係を非表示
+            ButtonChange.Visible = false;
+            ButtonChallenge.Visible = false;
+
+            // キャラカードをターン
+            for (i = 0; i <= 10; i++) {
+                CardPictChara2.Width = (int)(112 * (10 - i) / 10);
+                await Task.Delay(50);
+            }
+            CardPictChara2.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(CharaCard[1] / 13) + 2, (int)(CharaCard[1] % 13)]);
+            for (i = 0; i <= 10; i++) {
+                CardPictChara2.Width = (int)(112 * i / 10);
+                await Task.Delay(50);
+            }
+
+            // 勝敗判定
+            chara_pt = CalcPoint(CharaCard[0] % 13 + 1, CharaCard[1] % 13 + 1);
+            player_pt = CalcPoint(PlayerCard[0] % 13 + 1, PlayerCard[1] % 13 + 1);
+            LabelDealer.Text = (CharaCard[0]%13+1).ToString() + " " + (CharaCard[1]%13+1).ToString() + " " + chara_pt.ToString();
+            LabelPlayer.Text = PlayerCard[0].ToString() + " " + (PlayerCard[0]%13+1).ToString() + " : " + PlayerCard[1].ToString() + " " + (PlayerCard[1]%13+1).ToString() + " " + player_pt.ToString();
+        }
+
+        private int CalcPoint(int a,int b)
+        {
+            int pt;
+
+            if (a == 1) {
+                a = 11;
+            } else if (a > 10) {
+                a = 10;
+            }
+            if(b == 1) {
+                b = 11;
+            } else if(b > 10) {
+                b = 10;
+            }
+            pt = a + b;
+            if (pt > 21) pt -= 10;
+
+            return pt;
         }
     }
 }

@@ -267,6 +267,16 @@ namespace EreBla.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap card_ura {
+            get {
+                object obj = ResourceManager.GetObject("card_ura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap d01 {
             get {
                 object obj = ResourceManager.GetObject("d01", resourceCulture);
@@ -407,6 +417,36 @@ namespace EreBla.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap ere_lose1 {
+            get {
+                object obj = ResourceManager.GetObject("ere_lose1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap ere_lose2 {
+            get {
+                object obj = ResourceManager.GetObject("ere_lose2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap ere_lose3 {
+            get {
+                object obj = ResourceManager.GetObject("ere_lose3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap ere_play {
             get {
                 object obj = ResourceManager.GetObject("ere_play", resourceCulture);
@@ -450,6 +490,36 @@ namespace EreBla.Properties {
         internal static System.Drawing.Bitmap ere_waiting {
             get {
                 object obj = ResourceManager.GetObject("ere_waiting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap ere_win1 {
+            get {
+                object obj = ResourceManager.GetObject("ere_win1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap ere_win2 {
+            get {
+                object obj = ResourceManager.GetObject("ere_win2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap ere_win3 {
+            get {
+                object obj = ResourceManager.GetObject("ere_win3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -597,6 +667,36 @@ namespace EreBla.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap mui_lose1 {
+            get {
+                object obj = ResourceManager.GetObject("mui_lose1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap mui_lose2 {
+            get {
+                object obj = ResourceManager.GetObject("mui_lose2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap mui_lose3 {
+            get {
+                object obj = ResourceManager.GetObject("mui_lose3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap mui_play {
             get {
                 object obj = ResourceManager.GetObject("mui_play", resourceCulture);
@@ -640,6 +740,36 @@ namespace EreBla.Properties {
         internal static System.Drawing.Bitmap mui_waiting {
             get {
                 object obj = ResourceManager.GetObject("mui_waiting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap mui_win1 {
+            get {
+                object obj = ResourceManager.GetObject("mui_win1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap mui_win2 {
+            get {
+                object obj = ResourceManager.GetObject("mui_win2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap mui_win3 {
+            get {
+                object obj = ResourceManager.GetObject("mui_win3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

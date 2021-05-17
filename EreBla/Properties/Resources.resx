@@ -340,10 +340,49 @@
   <data name="s13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\s13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ere_lose1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ere_lose1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ere_lose2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ere_lose2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ere_lose3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ere_lose3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ere_play" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ere_play.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ere_win1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ere_win1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ere_win2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ere_win2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ere_win3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ere_win3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mui_lose1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mui_lose1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mui_lose2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mui_lose2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mui_lose3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mui_lose3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="mui_play" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mui_play.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mui_win1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mui_win1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mui_win2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mui_win2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mui_win3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mui_win3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="card_ura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\card_ura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
