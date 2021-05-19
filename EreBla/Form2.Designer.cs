@@ -51,7 +51,7 @@ namespace EreBla
             // RestartButton
             // 
             this.RestartButton.Font = new System.Drawing.Font("Yu Gothic UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RestartButton.Location = new System.Drawing.Point(624, 12);
+            this.RestartButton.Location = new System.Drawing.Point(545, 12);
             this.RestartButton.Name = "RestartButton";
             this.RestartButton.Size = new System.Drawing.Size(118, 41);
             this.RestartButton.TabIndex = 1;
@@ -70,7 +70,7 @@ namespace EreBla
             // 
             // CardPictPlayer1
             // 
-            this.CardPictPlayer1.Location = new System.Drawing.Point(282, 304);
+            this.CardPictPlayer1.Location = new System.Drawing.Point(341, 304);
             this.CardPictPlayer1.Name = "CardPictPlayer1";
             this.CardPictPlayer1.Size = new System.Drawing.Size(144, 207);
             this.CardPictPlayer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -79,7 +79,7 @@ namespace EreBla
             // 
             // CardPictPlayer2
             // 
-            this.CardPictPlayer2.Location = new System.Drawing.Point(456, 304);
+            this.CardPictPlayer2.Location = new System.Drawing.Point(515, 304);
             this.CardPictPlayer2.Name = "CardPictPlayer2";
             this.CardPictPlayer2.Size = new System.Drawing.Size(144, 207);
             this.CardPictPlayer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -89,7 +89,7 @@ namespace EreBla
             // ButtonChange
             // 
             this.ButtonChange.Image = global::EreBla.Properties.Resources.BtnChange;
-            this.ButtonChange.Location = new System.Drawing.Point(142, 544);
+            this.ButtonChange.Location = new System.Drawing.Point(127, 544);
             this.ButtonChange.Name = "ButtonChange";
             this.ButtonChange.Size = new System.Drawing.Size(157, 57);
             this.ButtonChange.TabIndex = 5;
@@ -99,7 +99,7 @@ namespace EreBla
             // ButtonChallenge
             // 
             this.ButtonChallenge.Image = global::EreBla.Properties.Resources.BtnChallenge;
-            this.ButtonChallenge.Location = new System.Drawing.Point(479, 544);
+            this.ButtonChallenge.Location = new System.Drawing.Point(431, 544);
             this.ButtonChallenge.Name = "ButtonChallenge";
             this.ButtonChallenge.Size = new System.Drawing.Size(148, 57);
             this.ButtonChallenge.TabIndex = 6;
@@ -127,27 +127,29 @@ namespace EreBla
             // LabelPlayer
             // 
             this.LabelPlayer.AutoSize = true;
-            this.LabelPlayer.Location = new System.Drawing.Point(624, 304);
+            this.LabelPlayer.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LabelPlayer.Location = new System.Drawing.Point(554, 258);
             this.LabelPlayer.Name = "LabelPlayer";
-            this.LabelPlayer.Size = new System.Drawing.Size(39, 15);
+            this.LabelPlayer.Size = new System.Drawing.Size(82, 24);
             this.LabelPlayer.TabIndex = 9;
-            this.LabelPlayer.Text = "Player";
+            this.LabelPlayer.Text = "あなた";
             // 
             // LabelDealer
             // 
             this.LabelDealer.AutoSize = true;
-            this.LabelDealer.Location = new System.Drawing.Point(41, 101);
+            this.LabelDealer.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LabelDealer.Location = new System.Drawing.Point(41, 93);
             this.LabelDealer.Name = "LabelDealer";
-            this.LabelDealer.Size = new System.Drawing.Size(40, 15);
+            this.LabelDealer.Size = new System.Drawing.Size(58, 24);
             this.LabelDealer.TabIndex = 10;
-            this.LabelDealer.Text = "Dealer";
+            this.LabelDealer.Text = "パソ";
             // 
             // GameMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(255)))), ((int)(((byte)(195)))));
-            this.ClientSize = new System.Drawing.Size(754, 648);
+            this.ClientSize = new System.Drawing.Size(714, 648);
             this.Controls.Add(this.LabelDealer);
             this.Controls.Add(this.LabelPlayer);
             this.Controls.Add(this.CardPictChara2);

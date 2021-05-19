@@ -27,6 +27,9 @@ namespace EreBla
             {"d01","d02","d03","d04","d05","d06","d07","d08","d09","d10","d11","d12","d13"}
         };
 
+        // キャラ名
+        private string[] charaname = { "","エレ子", "むいちゃん" };
+
         public GameMain()
         {
             // もとからあった初期化
@@ -71,8 +74,9 @@ namespace EreBla
             ButtonChange.Visible = true;
             ButtonChallenge.Visible = true;
 
-            // プレイヤーラベル表示
-            LabelPlayer.Text = "Player";
+            // ラベル表示
+            LabelDealer.Text = charaname[chara];
+            LabelPlayer.Text = "あなた";
 
             // キャラによるループBGMとイメージを設定
             switch (chara) {
@@ -80,12 +84,10 @@ namespace EreBla
                     this.Close();   // 誰も選んでいない
                     break;
                 case 1:             // エレ子とゲーム
-                    LabelDealer.Text = "エレ子";
                     playBGM = Properties.Resources.BGMere1;
                     CharaPict.Image = Properties.Resources.ere_play;
                     break;
                 case 2:             // むいとゲーム
-                    LabelDealer.Text = "むいちゃん";
                     playBGM = Properties.Resources.BGMmui1;
                     CharaPict.Image = Properties.Resources.mui_play;
                     break;
@@ -102,17 +104,28 @@ namespace EreBla
             CharaCard[0] = r.Next(0,25);
             CharaCard[1] = (CharaCard[0] + r.Next(1,24)) % 26;
 
-            // プレイヤーの２枚（乱数）
-            PlayerCard[0] = r.Next(0, 25);
-            PlayerCard[1] = (PlayerCard[0] + r.Next(1,23)) % 26;
-
             // キャラカードの表示（１枚は表、１枚は裏）
             CardPictChara1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(CharaCard[0] / 13) + 2, (int)(CharaCard[0] % 13)]);
             CardPictChara2.Image = (System.Drawing.Image)Properties.Resources.card_ura;
 
+            // プレイヤーの２枚（乱数）
+            PlayerCard[0] = r.Next(0, 25);
+            PlayerCard[1] = (PlayerCard[0] + r.Next(1,24)) % 26;
+
             // プレイヤーカードの表示（２枚とも表）
             CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[0] / 13), (int)(PlayerCard[0] % 13)]);
             CardPictPlayer2.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[1] / 13), (int)(PlayerCard[1] % 13)]);
+
+            // 1/15の確率でプレイヤーにジョーカー
+            if (r.Next(0, 15) >= 0) {
+                if(r.Next(0,2) == 0) {
+                    PlayerCard[0] = -1;
+                    CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.joker;
+                } else {
+                    PlayerCard[1] = -1;
+                    CardPictPlayer2.Image = (System.Drawing.Image)Properties.Resources.joker;
+                }
+            }
         }
 
         // もういっかいやるボタン（動作確認用）
@@ -150,13 +163,24 @@ namespace EreBla
         // 交換ボタンが押されたら
         private void ButtonChange_Click(object sender, EventArgs e)
         {
-            // プレイヤーの２枚（乱数）
+            // プレイヤーの２枚
             PlayerCard[0] = r.Next(0, 25);
-            PlayerCard[1] = (CharaCard[0] + r.Next(1, 23)) % 26;
+            PlayerCard[1] = (CharaCard[0] + r.Next(1, 24)) % 26;
 
-            // プレイヤーカードの表示（２枚とも表）
+            // プレイヤーカードの表示
             CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[0] / 13), (int)(PlayerCard[0] % 13)]);
             CardPictPlayer2.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[1] / 13), (int)(PlayerCard[1] % 13)]);
+
+            // 1/13の確率でプレイヤーにジョーカー
+            if (r.Next(0, 13) == 0) {
+                if (r.Next(0, 2) == 0) {
+                    PlayerCard[0] = -1;
+                    CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.joker;
+                } else {
+                    PlayerCard[1] = -1;
+                    CardPictPlayer2.Image = (System.Drawing.Image)Properties.Resources.joker;
+                }
+            }
 
             // 交換は１回だけなので交換ボタンを非表示にする
             ButtonChange.Visible = false;
@@ -187,25 +211,36 @@ namespace EreBla
             // 勝敗判定
             chara_pt = CalcPoint(CharaCard[0] % 13 + 1, CharaCard[1] % 13 + 1);
             player_pt = CalcPoint(PlayerCard[0] % 13 + 1, PlayerCard[1] % 13 + 1);
-            LabelDealer.Text = (CharaCard[0]%13+1).ToString() + " " + (CharaCard[1]%13+1).ToString() + " " + chara_pt.ToString();
-            LabelPlayer.Text = PlayerCard[0].ToString() + " " + (PlayerCard[0]%13+1).ToString() + " : " + PlayerCard[1].ToString() + " " + (PlayerCard[1]%13+1).ToString() + " " + player_pt.ToString();
+            LabelDealer.Text = charaname[chara] + "：" + chara_pt.ToString();
+            LabelPlayer.Text = "あなた：" + player_pt.ToString();
         }
 
         private int CalcPoint(int a,int b)
         {
             int pt;
 
-            if (a == 1) {
+            // 絵札処理
+            if (a > 10) a = 10;
+            if (b > 10) b = 10;
+
+            // エース処理（とりあえず11で考える）
+            if (a == 1) a = 11;
+            if (b == 1) b = 11;
+
+            // ジョーカー処理（なるべく21に近づける）
+            if (a == 0) {
                 a = 11;
-            } else if (a > 10) {
-                a = 10;
+                if (a + b > 21) a = 21 - b;
             }
-            if(b == 1) {
+            if (b == 0) {
                 b = 11;
-            } else if(b > 10) {
-                b = 10;
+                if (a + b > 21) b = 21 - a;
             }
+
+            // 合計する
             pt = a + b;
+
+            // 21を超えたとき（エースが11以外の理由はない）
             if (pt > 21) pt -= 10;
 
             return pt;

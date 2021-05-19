@@ -667,6 +667,16 @@ namespace EreBla.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap joker {
+            get {
+                object obj = ResourceManager.GetObject("joker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap mui_lose1 {
             get {
                 object obj = ResourceManager.GetObject("mui_lose1", resourceCulture);

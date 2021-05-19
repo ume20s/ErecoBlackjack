@@ -66,6 +66,7 @@
     <None Remove="Resources\h12.png" />
     <None Remove="Resources\h13.png" />
     <None Remove="Resources\hand_cursor.cur" />
+    <None Remove="Resources\joker.png" />
     <None Remove="Resources\mui_lose1.png" />
     <None Remove="Resources\mui_lose2.png" />
     <None Remove="Resources\mui_lose3.png" />
@@ -156,6 +157,7 @@
     <EmbeddedResource Include="Resources\h12.png" />
     <EmbeddedResource Include="Resources\h13.png" />
     <EmbeddedResource Include="Resources\hand_cursor.cur" />
+    <EmbeddedResource Include="Resources\joker.png" />
     <EmbeddedResource Include="Resources\mui_lose1.png" />
     <EmbeddedResource Include="Resources\mui_lose2.png" />
     <EmbeddedResource Include="Resources\mui_lose3.png" />
