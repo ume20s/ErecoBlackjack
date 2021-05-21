@@ -50,12 +50,12 @@ namespace EreBla
             // 
             // RestartButton
             // 
-            this.RestartButton.Font = new System.Drawing.Font("Yu Gothic UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RestartButton.Location = new System.Drawing.Point(545, 12);
+            this.RestartButton.Font = new System.Drawing.Font("HGS創英角ﾎﾟｯﾌﾟ体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RestartButton.Location = new System.Drawing.Point(68, 519);
             this.RestartButton.Name = "RestartButton";
-            this.RestartButton.Size = new System.Drawing.Size(118, 41);
+            this.RestartButton.Size = new System.Drawing.Size(216, 82);
             this.RestartButton.TabIndex = 1;
-            this.RestartButton.Text = "動作確認";
+            this.RestartButton.Text = "もういっかい？";
             this.RestartButton.UseVisualStyleBackColor = true;
             this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
             // 
@@ -128,7 +128,7 @@ namespace EreBla
             // 
             this.LabelPlayer.AutoSize = true;
             this.LabelPlayer.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LabelPlayer.Location = new System.Drawing.Point(554, 258);
+            this.LabelPlayer.Location = new System.Drawing.Point(515, 258);
             this.LabelPlayer.Name = "LabelPlayer";
             this.LabelPlayer.Size = new System.Drawing.Size(82, 24);
             this.LabelPlayer.TabIndex = 9;
@@ -163,7 +163,7 @@ namespace EreBla
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameMain";
-            this.Text = "エレ子のブラックジャック";
+            this.Text = "えれこのぶらっくじゃっく";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GameMain_FormClosed);
             this.Load += new System.EventHandler(this.GameMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CharaPict)).EndInit();

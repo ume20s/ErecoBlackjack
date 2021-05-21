@@ -388,4 +388,64 @@
   <data name="joker" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\joker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="drawE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drawE.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="drawM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drawM.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ere_draw1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ere_draw1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ere_draw2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ere_draw2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ere_draw3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ere_draw3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loseE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loseE1.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="loseE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loseE2.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="loseM1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loseM1.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="loseM2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loseM2.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mui_draw1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mui_draw1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mui_draw2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mui_draw2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mui_draw3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mui_draw3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playE.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="playM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playM.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="winE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\winE1.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="winE2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\winE2.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="winM1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\winM1.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="winM2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\winM2.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="spsc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spsc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ele_lose102" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ele_lose102.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

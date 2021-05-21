@@ -19,9 +19,6 @@ namespace EreBla
         private System.IO.Stream selectBGM;                 // BGM用IOストリーム
         private System.Media.SoundPlayer selectBGMplayer;   // BGM再生オブジェクト
 
-        // セリフ再生用NAudioオブジェクト
-//        private NAudio.Wave.WaveOut player = new NAudio.Wave.WaveOut();
-
         public CharacterSelect()
         {
             // もとからあった初期化

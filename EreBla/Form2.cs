@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NAudio.Wave;
+
 
 namespace EreBla
 {
@@ -15,9 +18,11 @@ namespace EreBla
         public int chara = 0;                   // キャラ番号(1=エレ,2=むい)
         private System.IO.Stream playBGM;       // BGM用IOストリーム
         private System.Media.SoundPlayer playBGMplayer;   // BGM再生オブジェクト
+        private NAudio.Wave.WaveOut pl;         // セリフ再生オブジェクト
         int[] CharaCard = new int[2];           // キャラの持ち手
         int[] PlayerCard = new int[2];          // プレイヤーの持ち手
         Random r = new System.Random();         // 乱数発生用
+        int ere_count = 0;                      // エレ子に勝った回数
 
         // トランプのリソース名
         private string[,] card = {
@@ -28,12 +33,26 @@ namespace EreBla
         };
 
         // キャラ名
-        private string[] charaname = { "","エレ子", "むいちゃん" };
+        private string[] charaname = { "", "エレ子", "むいちゃん" };
+
+        // キャラのイメージリソース名
+        private string[,] ImgWin = { { "ere_win1", "ere_win2", "ere_win3" }, { "mui_win1", "mui_win2", "mui_win3" } };
+        private string[,] ImgDraw = { { "ere_draw1", "ere_draw2", "ere_draw3" }, { "mui_draw1", "mui_draw2", "mui_draw3" } };
+        private string[,] ImgLose = { { "ere_lose1", "ere_lose2", "ere_lose3" }, { "mui_lose1", "mui_lose2", "mui_lose3" } };
+
+        // キャラのセリフリソース名
+        private string[] TalkPlay = { "playE", "playM" };
+        private string[,] TalkWin = { { "winE1", "winE2" }, { "winM1", "winM2" } };
+        private string[] TalkDraw = { "drawE", "drawM" };
+        private string[,] TalkLose = { { "loseE1", "loseE2" }, { "loseM1", "loseM2" } };
 
         public GameMain()
         {
             // もとからあった初期化
             InitializeComponent();
+
+            // セリフ用オブジェクト生成
+            pl = new NAudio.Wave.WaveOut();
 
             // スプラッシュスクリーンの表示
             SplashScreen ss = new SplashScreen();
@@ -68,11 +87,12 @@ namespace EreBla
         }
 
         // ゲームメインルーチン
-        private void PlayGame()
+        private async void PlayGame()
         {
-            // 消えてるかもしれないのでボタン表示
-            ButtonChange.Visible = true;
-            ButtonChallenge.Visible = true;
+            // ボタンを非表示
+            ButtonChange.Visible = false;
+            ButtonChallenge.Visible = false;
+            RestartButton.Visible = false;
 
             // ラベル表示
             LabelDealer.Text = charaname[chara];
@@ -116,9 +136,9 @@ namespace EreBla
             CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[0] / 13), (int)(PlayerCard[0] % 13)]);
             CardPictPlayer2.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[1] / 13), (int)(PlayerCard[1] % 13)]);
 
-            // 1/15の確率でプレイヤーにジョーカー
-            if (r.Next(0, 15) >= 0) {
-                if(r.Next(0,2) == 0) {
+            // 1/52の確率でプレイヤーにジョーカー
+            if (r.Next(0, 52) == 0) {
+                if(r.Next(0, 2) == 0) {
                     PlayerCard[0] = -1;
                     CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.joker;
                 } else {
@@ -126,6 +146,24 @@ namespace EreBla
                     CardPictPlayer2.Image = (System.Drawing.Image)Properties.Resources.joker;
                 }
             }
+            // キャラセリフ
+            await Speak(TalkPlay[chara-1]);
+
+            // ボタンの表示
+            if (this.InvokeRequired) {
+                this.Invoke(new Action(this.DispButton));
+            } else {
+                ButtonChange.Visible = true;
+                ButtonChallenge.Visible = true;
+            }
+
+        }
+
+        // ボタンの表示
+        private void DispButton()
+        {
+            ButtonChange.Visible = true;
+            ButtonChallenge.Visible = true;
         }
 
         // もういっかいやるボタン（動作確認用）
@@ -158,6 +196,9 @@ namespace EreBla
                 playBGMplayer.Stop();
                 playBGMplayer.Dispose();
             }
+
+            // セリフ用オブジェクトの破棄
+            pl.Dispose();
         }
 
         // 交換ボタンが押されたら
@@ -171,8 +212,8 @@ namespace EreBla
             CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[0] / 13), (int)(PlayerCard[0] % 13)]);
             CardPictPlayer2.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[1] / 13), (int)(PlayerCard[1] % 13)]);
 
-            // 1/13の確率でプレイヤーにジョーカー
-            if (r.Next(0, 13) == 0) {
+            // 1/50の確率でプレイヤーにジョーカー
+            if (r.Next(0, 50) == 0) {
                 if (r.Next(0, 2) == 0) {
                     PlayerCard[0] = -1;
                     CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.joker;
@@ -208,13 +249,27 @@ namespace EreBla
                 await Task.Delay(50);
             }
 
-            // 勝敗判定
+            // 得点計算
             chara_pt = CalcPoint(CharaCard[0] % 13 + 1, CharaCard[1] % 13 + 1);
             player_pt = CalcPoint(PlayerCard[0] % 13 + 1, PlayerCard[1] % 13 + 1);
             LabelDealer.Text = charaname[chara] + "：" + chara_pt.ToString();
             LabelPlayer.Text = "あなた：" + player_pt.ToString();
+
+            // 勝敗判定
+            if(PlayerCard[0]==-1 || PlayerCard[1] == -1){
+                LabelPlayer.Text = "あなた：Joker";
+                await YouWin();
+            } else if(chara_pt < player_pt) {
+                await YouWin();
+            } else if(chara_pt == player_pt) {
+                await YouDraw();
+            } else {
+                await YouLose();
+            }
+            RestartButton.Visible = true;
         }
 
+        // カードの得点計算
         private int CalcPoint(int a,int b)
         {
             int pt;
@@ -244,6 +299,57 @@ namespace EreBla
             if (pt > 21) pt -= 10;
 
             return pt;
+        }
+
+        // プレイヤー勝利
+        private async Task YouWin()
+        {
+            if (chara == 1) ere_count++;
+
+            CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 0]);
+            await Task.Delay(200);
+            CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 1]);
+            await Task.Delay(800);
+            if (ere_count > 12) {
+                CharaPict.Image = (Image)Properties.Resources.ele_lose102;
+            } else {
+                CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 2]);
+            }
+            await Speak(TalkLose[chara - 1, r.Next(2)]);
+        }
+
+        // プレイヤー引き分け
+        private async Task YouDraw()
+        {
+            CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgDraw[chara - 1, 0]);
+            await Task.Delay(200);
+            CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgDraw[chara - 1, 1]);
+            await Task.Delay(800);
+            CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgDraw[chara - 1, 2]);
+            await Speak(TalkDraw[chara - 1]);
+        }
+        // プレイヤー敗北
+        private async Task YouLose()
+        {
+            CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgWin[chara - 1, 0]);
+            await Task.Delay(200);
+            CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgWin[chara - 1, 1]);
+            await Task.Delay(800);
+            CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgWin[chara - 1, 2]);
+            await Speak(TalkWin[chara - 1, r.Next(2)]);
+        }
+
+        // セリフ音声の再生
+        private async Task Speak(string s)
+        {
+            byte[] buffer = (byte[])Properties.Resources.ResourceManager.GetObject(s);
+            using var stream = new MemoryStream(buffer);
+            using WaveStream pcm = new Mp3FileReader(stream);
+            pl.Init(pcm);
+            pl.Play();
+            while (pl.PlaybackState == PlaybackState.Playing) {
+                await Task.Delay(10);
+            }
         }
     }
 }

@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>icon-256.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +12,8 @@
     <None Remove="Resources\BGMere2.wav" />
     <None Remove="Resources\BGMmui1.wav" />
     <None Remove="Resources\BGMmui2.wav" />
+    <None Remove="Resources\BGMselect1.wav" />
+    <None Remove="Resources\BGMselect2.wav" />
     <None Remove="Resources\BtnChallenge.png" />
     <None Remove="Resources\BtnChange.png" />
     <None Remove="Resources\c01.png" />
@@ -41,6 +44,12 @@
     <None Remove="Resources\d12.png" />
     <None Remove="Resources\d13.png" />
     <None Remove="Resources\docchi.png" />
+    <None Remove="Resources\drawE.mp3" />
+    <None Remove="Resources\drawM.mp3" />
+    <None Remove="Resources\ele_lose102.png" />
+    <None Remove="Resources\ere_draw1.png" />
+    <None Remove="Resources\ere_draw2.png" />
+    <None Remove="Resources\ere_draw3.png" />
     <None Remove="Resources\ere_lose1.png" />
     <None Remove="Resources\ere_lose2.png" />
     <None Remove="Resources\ere_lose3.png" />
@@ -67,6 +76,13 @@
     <None Remove="Resources\h13.png" />
     <None Remove="Resources\hand_cursor.cur" />
     <None Remove="Resources\joker.png" />
+    <None Remove="Resources\loseE1.mp3" />
+    <None Remove="Resources\loseE2.mp3" />
+    <None Remove="Resources\loseM1.mp3" />
+    <None Remove="Resources\loseM2.mp3" />
+    <None Remove="Resources\mui_draw1.png" />
+    <None Remove="Resources\mui_draw2.png" />
+    <None Remove="Resources\mui_draw3.png" />
     <None Remove="Resources\mui_lose1.png" />
     <None Remove="Resources\mui_lose2.png" />
     <None Remove="Resources\mui_lose3.png" />
@@ -78,6 +94,8 @@
     <None Remove="Resources\mui_win1.png" />
     <None Remove="Resources\mui_win2.png" />
     <None Remove="Resources\mui_win3.png" />
+    <None Remove="Resources\playE.mp3" />
+    <None Remove="Resources\playM.mp3" />
     <None Remove="Resources\s01.png" />
     <None Remove="Resources\s02.png" />
     <None Remove="Resources\s03.png" />
@@ -95,6 +113,10 @@
     <None Remove="Resources\selectM.mp3" />
     <None Remove="Resources\titleE.wav" />
     <None Remove="Resources\titleM.wav" />
+    <None Remove="Resources\winE1.mp3" />
+    <None Remove="Resources\winE2.mp3" />
+    <None Remove="Resources\winM1.mp3" />
+    <None Remove="Resources\winM2.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -102,6 +124,8 @@
     <EmbeddedResource Include="Resources\BGMere2.wav" />
     <EmbeddedResource Include="Resources\BGMmui1.wav" />
     <EmbeddedResource Include="Resources\BGMmui2.wav" />
+    <EmbeddedResource Include="Resources\BGMselect1.wav" />
+    <EmbeddedResource Include="Resources\BGMselect2.wav" />
     <EmbeddedResource Include="Resources\BtnChallenge.png" />
     <EmbeddedResource Include="Resources\BtnChange.png" />
     <EmbeddedResource Include="Resources\c01.png" />
@@ -132,6 +156,12 @@
     <EmbeddedResource Include="Resources\d12.png" />
     <EmbeddedResource Include="Resources\d13.png" />
     <EmbeddedResource Include="Resources\docchi.png" />
+    <EmbeddedResource Include="Resources\drawE.mp3" />
+    <EmbeddedResource Include="Resources\drawM.mp3" />
+    <EmbeddedResource Include="Resources\ele_lose102.png" />
+    <EmbeddedResource Include="Resources\ere_draw1.png" />
+    <EmbeddedResource Include="Resources\ere_draw2.png" />
+    <EmbeddedResource Include="Resources\ere_draw3.png" />
     <EmbeddedResource Include="Resources\ere_lose1.png" />
     <EmbeddedResource Include="Resources\ere_lose2.png" />
     <EmbeddedResource Include="Resources\ere_lose3.png" />
@@ -158,6 +188,13 @@
     <EmbeddedResource Include="Resources\h13.png" />
     <EmbeddedResource Include="Resources\hand_cursor.cur" />
     <EmbeddedResource Include="Resources\joker.png" />
+    <EmbeddedResource Include="Resources\loseE1.mp3" />
+    <EmbeddedResource Include="Resources\loseE2.mp3" />
+    <EmbeddedResource Include="Resources\loseM1.mp3" />
+    <EmbeddedResource Include="Resources\loseM2.mp3" />
+    <EmbeddedResource Include="Resources\mui_draw1.png" />
+    <EmbeddedResource Include="Resources\mui_draw2.png" />
+    <EmbeddedResource Include="Resources\mui_draw3.png" />
     <EmbeddedResource Include="Resources\mui_lose1.png" />
     <EmbeddedResource Include="Resources\mui_lose2.png" />
     <EmbeddedResource Include="Resources\mui_lose3.png" />
@@ -169,6 +206,8 @@
     <EmbeddedResource Include="Resources\mui_win1.png" />
     <EmbeddedResource Include="Resources\mui_win2.png" />
     <EmbeddedResource Include="Resources\mui_win3.png" />
+    <EmbeddedResource Include="Resources\playE.mp3" />
+    <EmbeddedResource Include="Resources\playM.mp3" />
     <EmbeddedResource Include="Resources\s01.png" />
     <EmbeddedResource Include="Resources\s02.png" />
     <EmbeddedResource Include="Resources\s03.png" />
@@ -186,6 +225,10 @@
     <EmbeddedResource Include="Resources\selectM.mp3" />
     <EmbeddedResource Include="Resources\titleE.wav" />
     <EmbeddedResource Include="Resources\titleM.wav" />
+    <EmbeddedResource Include="Resources\winE1.mp3" />
+    <EmbeddedResource Include="Resources\winE2.mp3" />
+    <EmbeddedResource Include="Resources\winM1.mp3" />
+    <EmbeddedResource Include="Resources\winM2.mp3" />
   </ItemGroup>
 
   <ItemGroup>

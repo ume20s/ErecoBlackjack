@@ -119,7 +119,7 @@ namespace EreBla
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CharacterSelect";
-            this.Text = "エレ子のブラックジャック";
+            this.Text = "えれこのぶらっくじゃっく";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictMuiBig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
