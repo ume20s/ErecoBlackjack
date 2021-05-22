@@ -117,6 +117,7 @@ namespace EreBla
             }
 
             // リソースを取得してループBGM再生
+
             playBGMplayer = new System.Media.SoundPlayer(playBGM);
             playBGMplayer.PlayLooping();
 
@@ -255,8 +256,22 @@ namespace EreBla
             LabelDealer.Text = charaname[chara] + "：" + chara_pt.ToString();
             LabelPlayer.Text = "あなた：" + player_pt.ToString();
 
+            // ループBGMをとめる
+            playBGMplayer.Stop();
+            playBGMplayer.Dispose();
+
+            // リソースを取得してゲーム終了BGM再生
+            if(chara == 1) {
+                playBGM = Properties.Resources.BGMere2;
+            }
+            else {
+                playBGM = Properties.Resources.BGMmui2;
+            }
+            playBGMplayer = new System.Media.SoundPlayer(playBGM);
+            playBGMplayer.Play();
+
             // 勝敗判定
-            if(PlayerCard[0]==-1 || PlayerCard[1] == -1){
+            if (PlayerCard[0]==-1 || PlayerCard[1] == -1){
                 LabelPlayer.Text = "あなた：Joker";
                 await YouWin();
             } else if(chara_pt < player_pt) {
@@ -306,14 +321,14 @@ namespace EreBla
         {
             if (chara == 1) ere_count++;
 
-            CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 0]);
+            CharaPict.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 0]);
             await Task.Delay(200);
-            CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 1]);
+            CharaPict.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 1]);
             await Task.Delay(800);
-            if (ere_count > 12) {
-                CharaPict.Image = (Image)Properties.Resources.ele_lose102;
+            if (ere_count > 128) {
+                CharaPict.Image = (System.Drawing.Image)Properties.Resources.ele_lose102;
             } else {
-                CharaPict.Image = (Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 2]);
+                CharaPict.Image = (System.Drawing.Image)(System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 2]);
             }
             await Speak(TalkLose[chara - 1, r.Next(2)]);
         }

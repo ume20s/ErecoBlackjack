@@ -25,7 +25,7 @@ namespace EreBla
             InitializeComponent();
 
             // ループBGMの再生開始
-            selectBGM = Properties.Resources.BGMselect11;
+            selectBGM = Properties.Resources.BGMselect1;
             selectBGMplayer = new System.Media.SoundPlayer(selectBGM);
             selectBGMplayer.PlayLooping();
         }
@@ -104,7 +104,7 @@ namespace EreBla
             selectBGMplayer.Dispose();
 
             // リソースを取得して選択終了BGM再生
-            selectBGM = Properties.Resources.BGMselect21;
+            selectBGM = Properties.Resources.BGMselect2;
             selectBGMplayer = new System.Media.SoundPlayer(selectBGM);
             selectBGMplayer.Play();
 
@@ -140,7 +140,7 @@ namespace EreBla
             selectBGMplayer.Dispose();
 
             // リソースを取得して選択終了BGM再生
-            selectBGM = Properties.Resources.BGMselect21;
+            selectBGM = Properties.Resources.BGMselect2;
             selectBGMplayer = new System.Media.SoundPlayer(selectBGM);
             selectBGMplayer.Play();
 

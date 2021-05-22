@@ -99,18 +99,18 @@ namespace EreBla.Properties {
         /// <summary>
         ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream BGMselect11 {
+        internal static System.IO.UnmanagedMemoryStream BGMselect1 {
             get {
-                return ResourceManager.GetStream("BGMselect11", resourceCulture);
+                return ResourceManager.GetStream("BGMselect1", resourceCulture);
             }
         }
         
         /// <summary>
         ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream BGMselect21 {
+        internal static System.IO.UnmanagedMemoryStream BGMselect2 {
             get {
-                return ResourceManager.GetStream("BGMselect21", resourceCulture);
+                return ResourceManager.GetStream("BGMselect2", resourceCulture);
             }
         }
         
