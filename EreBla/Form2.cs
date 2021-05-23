@@ -205,9 +205,12 @@ namespace EreBla
         // 交換ボタンが押されたら
         private void ButtonChange_Click(object sender, EventArgs e)
         {
+            // 配る効果音
+            Speak("cardDistribute");
+
             // プレイヤーの２枚
             PlayerCard[0] = r.Next(0, 25);
-            PlayerCard[1] = (CharaCard[0] + r.Next(1, 24)) % 26;
+            PlayerCard[1] = (CharaCard[0] + r.Next(1, 23)) % 26;
 
             // プレイヤーカードの表示
             CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[0] / 13), (int)(PlayerCard[0] % 13)]);
@@ -238,6 +241,9 @@ namespace EreBla
             // ボタン関係を非表示
             ButtonChange.Visible = false;
             ButtonChallenge.Visible = false;
+
+            // カードを開ける効果音
+            Speak("cardOpen");
 
             // キャラカードをターン
             for (i = 0; i <= 10; i++) {

@@ -29,6 +29,8 @@
     <None Remove="Resources\c11.png" />
     <None Remove="Resources\c12.png" />
     <None Remove="Resources\c13.png" />
+    <None Remove="Resources\cardDistribute.mp3" />
+    <None Remove="Resources\cardOpen.mp3" />
     <None Remove="Resources\card_ura.png" />
     <None Remove="Resources\d01.png" />
     <None Remove="Resources\d02.png" />
@@ -141,6 +143,8 @@
     <EmbeddedResource Include="Resources\c11.png" />
     <EmbeddedResource Include="Resources\c12.png" />
     <EmbeddedResource Include="Resources\c13.png" />
+    <EmbeddedResource Include="Resources\cardDistribute.mp3" />
+    <EmbeddedResource Include="Resources\cardOpen.mp3" />
     <EmbeddedResource Include="Resources\card_ura.png" />
     <EmbeddedResource Include="Resources\d01.png" />
     <EmbeddedResource Include="Resources\d02.png" />
