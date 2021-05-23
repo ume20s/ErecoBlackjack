@@ -39,6 +39,8 @@ namespace EreBla
             this.CardPictChara2 = new System.Windows.Forms.PictureBox();
             this.LabelPlayer = new System.Windows.Forms.Label();
             this.LabelDealer = new System.Windows.Forms.Label();
+            this.OneMoreButton = new System.Windows.Forms.Button();
+            this.LabelResult = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CharaPict)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardPictPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CardPictPlayer2)).BeginInit();
@@ -51,17 +53,18 @@ namespace EreBla
             // RestartButton
             // 
             this.RestartButton.Font = new System.Drawing.Font("HGS創英角ﾎﾟｯﾌﾟ体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RestartButton.Location = new System.Drawing.Point(68, 519);
+            this.RestartButton.Location = new System.Drawing.Point(68, 544);
             this.RestartButton.Name = "RestartButton";
             this.RestartButton.Size = new System.Drawing.Size(216, 82);
             this.RestartButton.TabIndex = 1;
-            this.RestartButton.Text = "もういっかい？";
+            this.RestartButton.Text = "メニューに戻る";
             this.RestartButton.UseVisualStyleBackColor = true;
             this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
             // 
             // CharaPict
             // 
-            this.CharaPict.Location = new System.Drawing.Point(260, 12);
+            this.CharaPict.BackColor = System.Drawing.Color.Transparent;
+            this.CharaPict.Location = new System.Drawing.Point(250, 12);
             this.CharaPict.Name = "CharaPict";
             this.CharaPict.Size = new System.Drawing.Size(225, 270);
             this.CharaPict.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -70,7 +73,8 @@ namespace EreBla
             // 
             // CardPictPlayer1
             // 
-            this.CardPictPlayer1.Location = new System.Drawing.Point(341, 304);
+            this.CardPictPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.CardPictPlayer1.Location = new System.Drawing.Point(331, 304);
             this.CardPictPlayer1.Name = "CardPictPlayer1";
             this.CardPictPlayer1.Size = new System.Drawing.Size(144, 207);
             this.CardPictPlayer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -79,7 +83,8 @@ namespace EreBla
             // 
             // CardPictPlayer2
             // 
-            this.CardPictPlayer2.Location = new System.Drawing.Point(515, 304);
+            this.CardPictPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.CardPictPlayer2.Location = new System.Drawing.Point(505, 304);
             this.CardPictPlayer2.Name = "CardPictPlayer2";
             this.CardPictPlayer2.Size = new System.Drawing.Size(144, 207);
             this.CardPictPlayer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -89,7 +94,7 @@ namespace EreBla
             // ButtonChange
             // 
             this.ButtonChange.Image = global::EreBla.Properties.Resources.BtnChange;
-            this.ButtonChange.Location = new System.Drawing.Point(127, 544);
+            this.ButtonChange.Location = new System.Drawing.Point(117, 544);
             this.ButtonChange.Name = "ButtonChange";
             this.ButtonChange.Size = new System.Drawing.Size(157, 57);
             this.ButtonChange.TabIndex = 5;
@@ -99,7 +104,7 @@ namespace EreBla
             // ButtonChallenge
             // 
             this.ButtonChallenge.Image = global::EreBla.Properties.Resources.BtnChallenge;
-            this.ButtonChallenge.Location = new System.Drawing.Point(431, 544);
+            this.ButtonChallenge.Location = new System.Drawing.Point(421, 544);
             this.ButtonChallenge.Name = "ButtonChallenge";
             this.ButtonChallenge.Size = new System.Drawing.Size(148, 57);
             this.ButtonChallenge.TabIndex = 6;
@@ -144,12 +149,35 @@ namespace EreBla
             this.LabelDealer.TabIndex = 10;
             this.LabelDealer.Text = "パソ";
             // 
+            // OneMoreButton
+            // 
+            this.OneMoreButton.Font = new System.Drawing.Font("HGS創英角ﾎﾟｯﾌﾟ体", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OneMoreButton.Location = new System.Drawing.Point(353, 544);
+            this.OneMoreButton.Name = "OneMoreButton";
+            this.OneMoreButton.Size = new System.Drawing.Size(216, 82);
+            this.OneMoreButton.TabIndex = 11;
+            this.OneMoreButton.Text = "もういっかい？";
+            this.OneMoreButton.UseVisualStyleBackColor = true;
+            this.OneMoreButton.Click += new System.EventHandler(this.OneMoreButton_Click);
+            // 
+            // LabelResult
+            // 
+            this.LabelResult.AutoSize = true;
+            this.LabelResult.Font = new System.Drawing.Font("メイリオ", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LabelResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.LabelResult.Location = new System.Drawing.Point(481, 12);
+            this.LabelResult.Name = "LabelResult";
+            this.LabelResult.Size = new System.Drawing.Size(172, 23);
+            this.LabelResult.TabIndex = 12;
+            this.LabelResult.Text = "対パソ成績：0勝0敗0分";
+            // 
             // GameMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(255)))), ((int)(((byte)(195)))));
-            this.ClientSize = new System.Drawing.Size(714, 648);
+            this.ClientSize = new System.Drawing.Size(720, 648);
+            this.Controls.Add(this.LabelResult);
             this.Controls.Add(this.LabelDealer);
             this.Controls.Add(this.LabelPlayer);
             this.Controls.Add(this.CardPictChara2);
@@ -160,6 +188,7 @@ namespace EreBla
             this.Controls.Add(this.CardPictPlayer1);
             this.Controls.Add(this.CharaPict);
             this.Controls.Add(this.RestartButton);
+            this.Controls.Add(this.OneMoreButton);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameMain";
@@ -189,5 +218,7 @@ namespace EreBla
         private System.Windows.Forms.PictureBox CardPictChara2;
         private System.Windows.Forms.Label LabelPlayer;
         private System.Windows.Forms.Label LabelDealer;
+        private System.Windows.Forms.Button OneMoreButton;
+        private System.Windows.Forms.Label LabelResult;
     }
 }

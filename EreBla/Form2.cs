@@ -22,7 +22,7 @@ namespace EreBla
         int[] CharaCard = new int[2];           // キャラの持ち手
         int[] PlayerCard = new int[2];          // プレイヤーの持ち手
         Random r = new System.Random();         // 乱数発生用
-        int ere_count = 0;                      // エレ子に勝った回数
+        int[,] result = { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } }; // 勝敗分回数(0:ダミー, 1:エレ子, 2:むい)
 
         // トランプのリソース名
         private string[,] card = {
@@ -55,12 +55,12 @@ namespace EreBla
             pl = new NAudio.Wave.WaveOut();
 
             // スプラッシュスクリーンの表示
-            SplashScreen ss = new SplashScreen();
-            ss.Show();
-            ss.Refresh();
-            Thread.Sleep(3200);
-            ss.Close();
-            ss.Dispose();
+            // SplashScreen ss = new SplashScreen();
+            // ss.Show();
+            // ss.Refresh();
+            // Thread.Sleep(3200);
+            // ss.Close();
+            // ss.Dispose();
 
             // キャラクタ選択画面の表示
             CharacterSelect cs = new CharacterSelect() {
@@ -93,10 +93,12 @@ namespace EreBla
             ButtonChange.Visible = false;
             ButtonChallenge.Visible = false;
             RestartButton.Visible = false;
+            OneMoreButton.Visible = false;
 
             // ラベル表示
             LabelDealer.Text = charaname[chara];
             LabelPlayer.Text = "あなた";
+            DispLabelResult();
 
             // キャラによるループBGMとイメージを設定
             switch (chara) {
@@ -105,11 +107,11 @@ namespace EreBla
                     break;
                 case 1:             // エレ子とゲーム
                     playBGM = Properties.Resources.BGMere1;
-                    CharaPict.Image = Properties.Resources.ere_play;
+                    // CharaPict.Image = Properties.Resources.ere_play;
                     break;
                 case 2:             // むいとゲーム
                     playBGM = Properties.Resources.BGMmui1;
-                    CharaPict.Image = Properties.Resources.mui_play;
+                    // CharaPict.Image = Properties.Resources.mui_play;
                     break;
                 default:            // ここには来ないはずだけど
                     this.Close();
@@ -150,24 +152,29 @@ namespace EreBla
             // キャラセリフ
             await Speak(TalkPlay[chara-1]);
 
-            // ボタンの表示
+            // ボタンの表示（マルチスレッド対応メイン）
             if (this.InvokeRequired) {
-                this.Invoke(new Action(this.DispButton));
+                this.Invoke(new Action(this.DispButtonSub));
             } else {
                 ButtonChange.Visible = true;
                 ButtonChallenge.Visible = true;
             }
-
         }
 
-        // ボタンの表示
-        private void DispButton()
+        // ボタンの表示（マルチスレッド対応サブ）
+        private void DispButtonSub()
         {
             ButtonChange.Visible = true;
             ButtonChallenge.Visible = true;
         }
 
-        // もういっかいやるボタン（動作確認用）
+        // もういっかいボタン
+        private void OneMoreButton_Click(object sender, EventArgs e)
+        {
+            PlayGame();
+        }
+
+        // メニューに戻るボタン
         private void RestartButton_Click(object sender, EventArgs e)
         {
             // 自分自身を隠して
@@ -278,16 +285,41 @@ namespace EreBla
 
             // 勝敗判定
             if (PlayerCard[0]==-1 || PlayerCard[1] == -1){
+                result[chara, 0]++;
+                DispLabelResult();
                 LabelPlayer.Text = "あなた：Joker";
                 await YouWin();
             } else if(chara_pt < player_pt) {
+                result[chara, 0]++;
+                DispLabelResult();
                 await YouWin();
             } else if(chara_pt == player_pt) {
+                result[chara, 2]++;
+                DispLabelResult();
                 await YouDraw();
             } else {
+                result[chara, 1]++;
+                DispLabelResult();
                 await YouLose();
             }
+            OneMoreButton.Visible = true;
             RestartButton.Visible = true;
+        }
+
+        // 対キャラ成績の表示（マルチスレッド対応メイン）
+        private void DispLabelResult()
+        {
+            if (this.InvokeRequired) {
+                this.Invoke(new Action(this.DispLabelResultSub));
+            } else {
+                LabelResult.Text = "対" + charaname[chara] + "成績：" + result[chara, 0] + "勝" + result[chara, 1] + "敗" + result[chara, 2] + "分";
+            }
+        }
+
+        // 対キャラ成績の表示（マルチスレッド対応サブ）
+        private void DispLabelResultSub()
+        {
+            LabelResult.Text = "対" + charaname[chara] + "成績：" + result[chara, 0] + "勝" + result[chara, 1] + "敗" + result[chara, 2] + "分";
         }
 
         // カードの得点計算
@@ -325,13 +357,12 @@ namespace EreBla
         // プレイヤー勝利
         private async Task YouWin()
         {
-            if (chara == 1) ere_count++;
-
+            
             CharaPict.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 0]);
             await Task.Delay(200);
             CharaPict.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 1]);
             await Task.Delay(800);
-            if (ere_count > 128) {
+            if (result[1,0] == 108) {   // エレ子に108回勝ったら別画像
                 CharaPict.Image = (System.Drawing.Image)Properties.Resources.ele_lose102;
             } else {
                 CharaPict.Image = (System.Drawing.Image)(System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(ImgLose[chara - 1, 2]);
