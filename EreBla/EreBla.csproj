@@ -10,6 +10,7 @@
     <Company>ume20studio</Company>
     <Product>Eleco's Blackjack</Product>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
