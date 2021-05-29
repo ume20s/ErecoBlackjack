@@ -29,6 +29,7 @@ namespace EreBla
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameMain));
             this.RestartButton = new System.Windows.Forms.Button();
             this.CharaPict = new System.Windows.Forms.PictureBox();
             this.CardPictPlayer1 = new System.Windows.Forms.PictureBox();
@@ -189,6 +190,7 @@ namespace EreBla
             this.Controls.Add(this.CharaPict);
             this.Controls.Add(this.RestartButton);
             this.Controls.Add(this.OneMoreButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameMain";

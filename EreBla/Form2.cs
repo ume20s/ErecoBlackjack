@@ -55,12 +55,12 @@ namespace EreBla
             pl = new NAudio.Wave.WaveOut();
 
             // スプラッシュスクリーンの表示
-            // SplashScreen ss = new SplashScreen();
-            // ss.Show();
-            // ss.Refresh();
-            // Thread.Sleep(3200);
-            // ss.Close();
-            // ss.Dispose();
+            SplashScreen ss = new SplashScreen();
+            ss.Show();
+            ss.Refresh();
+            Thread.Sleep(3200);
+            ss.Close();
+            ss.Dispose();
 
             // キャラクタ選択画面の表示
             CharacterSelect cs = new CharacterSelect() {
@@ -107,11 +107,11 @@ namespace EreBla
                     break;
                 case 1:             // エレ子とゲーム
                     playBGM = Properties.Resources.BGMere1;
-                    // CharaPict.Image = Properties.Resources.ere_play;
+                    CharaPict.Image = Properties.Resources.ere_play;
                     break;
                 case 2:             // むいとゲーム
                     playBGM = Properties.Resources.BGMmui1;
-                    // CharaPict.Image = Properties.Resources.mui_play;
+                    CharaPict.Image = Properties.Resources.mui_play;
                     break;
                 default:            // ここには来ないはずだけど
                     this.Close();

@@ -454,37 +454,10 @@
   <data name="cardOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cardOpen.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="firework01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\firework01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-256.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="firework02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\firework02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="firework03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\firework03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="firework04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\firework04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="firework05" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\firework05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="firework06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\firework06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="firework07" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\firework07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="firework08" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\firework08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="firework09" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\firework09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="firework10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\firework10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="firework11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\firework11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_128.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
