@@ -44,9 +44,9 @@ namespace EreBla
             // PictMuiBig
             // 
             this.PictMuiBig.Image = global::EreBla.Properties.Resources.mui_waiting;
-            this.PictMuiBig.Location = new System.Drawing.Point(416, 154);
+            this.PictMuiBig.Location = new System.Drawing.Point(265, 98);
             this.PictMuiBig.Name = "PictMuiBig";
-            this.PictMuiBig.Size = new System.Drawing.Size(300, 400);
+            this.PictMuiBig.Size = new System.Drawing.Size(210, 280);
             this.PictMuiBig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictMuiBig.TabIndex = 0;
             this.PictMuiBig.TabStop = false;
@@ -60,9 +60,9 @@ namespace EreBla
             // pictureBox2
             // 
             this.pictureBox2.Image = global::EreBla.Properties.Resources.docchi;
-            this.pictureBox2.Location = new System.Drawing.Point(64, 33);
+            this.pictureBox2.Location = new System.Drawing.Point(35, 28);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(616, 81);
+            this.pictureBox2.Size = new System.Drawing.Size(430, 56);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -70,9 +70,9 @@ namespace EreBla
             // PictMuiSmall
             // 
             this.PictMuiSmall.Image = global::EreBla.Properties.Resources.mui_waiting;
-            this.PictMuiSmall.Location = new System.Drawing.Point(416, 164);
+            this.PictMuiSmall.Location = new System.Drawing.Point(275, 108);
             this.PictMuiSmall.Name = "PictMuiSmall";
-            this.PictMuiSmall.Size = new System.Drawing.Size(280, 380);
+            this.PictMuiSmall.Size = new System.Drawing.Size(190, 260);
             this.PictMuiSmall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictMuiSmall.TabIndex = 2;
             this.PictMuiSmall.TabStop = false;
@@ -81,9 +81,9 @@ namespace EreBla
             // PictEreBig
             // 
             this.PictEreBig.Image = global::EreBla.Properties.Resources.ere_waiting;
-            this.PictEreBig.Location = new System.Drawing.Point(35, 154);
+            this.PictEreBig.Location = new System.Drawing.Point(35, 98);
             this.PictEreBig.Name = "PictEreBig";
-            this.PictEreBig.Size = new System.Drawing.Size(300, 400);
+            this.PictEreBig.Size = new System.Drawing.Size(210, 280);
             this.PictEreBig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictEreBig.TabIndex = 3;
             this.PictEreBig.TabStop = false;
@@ -97,9 +97,9 @@ namespace EreBla
             // PictEreSmall
             // 
             this.PictEreSmall.Image = global::EreBla.Properties.Resources.ere_waiting;
-            this.PictEreSmall.Location = new System.Drawing.Point(45, 164);
+            this.PictEreSmall.Location = new System.Drawing.Point(45, 108);
             this.PictEreSmall.Name = "PictEreSmall";
-            this.PictEreSmall.Size = new System.Drawing.Size(280, 380);
+            this.PictEreSmall.Size = new System.Drawing.Size(190, 260);
             this.PictEreSmall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictEreSmall.TabIndex = 4;
             this.PictEreSmall.TabStop = false;
@@ -110,12 +110,13 @@ namespace EreBla
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(145)))));
-            this.ClientSize = new System.Drawing.Size(754, 651);
+            this.ClientSize = new System.Drawing.Size(512, 439);
             this.Controls.Add(this.PictEreBig);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.PictMuiBig);
             this.Controls.Add(this.PictMuiSmall);
             this.Controls.Add(this.PictEreSmall);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CharacterSelect";

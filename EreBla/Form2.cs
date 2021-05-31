@@ -217,7 +217,7 @@ namespace EreBla
 
             // プレイヤーの２枚
             PlayerCard[0] = r.Next(0, 25);
-            PlayerCard[1] = (CharaCard[0] + r.Next(1, 23)) % 26;
+            PlayerCard[1] = (PlayerCard[0] + r.Next(1, 23)) % 26;
 
             // プレイヤーカードの表示
             CardPictPlayer1.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(PlayerCard[0] / 13), (int)(PlayerCard[0] % 13)]);
@@ -254,12 +254,12 @@ namespace EreBla
 
             // キャラカードをターン
             for (i = 0; i <= 10; i++) {
-                CardPictChara2.Width = (int)(112 * (10 - i) / 10);
+                CardPictChara2.Width = (int)(78 * (10 - i) / 10);
                 await Task.Delay(50);
             }
             CardPictChara2.Image = (System.Drawing.Image)Properties.Resources.ResourceManager.GetObject(card[(int)(CharaCard[1] / 13) + 2, (int)(CharaCard[1] % 13)]);
             for (i = 0; i <= 10; i++) {
-                CardPictChara2.Width = (int)(112 * i / 10);
+                CardPictChara2.Width = (int)(78 * i / 10);
                 await Task.Delay(50);
             }
 
