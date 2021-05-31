@@ -7,7 +7,7 @@
 
 【著 作 権 者】 ふぃー(Twitter:@fizyfazy)
 
-               NAK(Twitter:@NakSpector
+               NAK(Twitter:@NakSpector)
 
                UMEDA Mitsuru(Twitter:@mi_umeda, Vector:ume20)
 
