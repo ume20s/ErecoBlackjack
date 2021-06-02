@@ -1,14 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
 using NAudio.Wave;
 
 namespace EreBla
@@ -16,7 +9,7 @@ namespace EreBla
     public partial class CharacterSelect : Form
     {
         public GameMain mm;                     // メインにキャラクタ番号を受け渡すためのオブジェクト
-        private System.IO.Stream selectBGM;                 // BGM用IOストリーム
+        private SpStream selectBGM;                 // BGM用IOストリーム
         private System.Media.SoundPlayer selectBGMplayer;   // BGM再生オブジェクト
 
         public CharacterSelect()
@@ -24,10 +17,6 @@ namespace EreBla
             // もとからあった初期化
             InitializeComponent();
 
-            // ループBGMの再生開始
-            selectBGM = Properties.Resources.BGMselect1;
-            selectBGMplayer = new System.Media.SoundPlayer(selectBGM);
-            selectBGMplayer.PlayLooping();
         }
 
         // カーソル処理関連
@@ -84,6 +73,13 @@ namespace EreBla
         // キャラ選択画面
         private void Form1_Load(object sender, EventArgs e)
         {
+            // ループBGMの再生開始
+            selectBGM = new SpStream(Properties.Resources.BGMselect1);
+            selectBGM.Volume = mm.Volume;
+            sliderVolume.Value = mm.Volume;
+            selectBGMplayer = new System.Media.SoundPlayer(selectBGM);
+            selectBGMplayer.PlayLooping();
+
             // カーソルをオリジナルのものに変更
             System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
             Cursor myCursor = new Cursor(asm.GetManifestResourceStream(asm.GetName().Name + ".Resources.hand_cursor.cur"));
@@ -104,7 +100,9 @@ namespace EreBla
             selectBGMplayer.Dispose();
 
             // リソースを取得して選択終了BGM再生
-            selectBGM = Properties.Resources.BGMselect2;
+            selectBGM.Dispose();
+            selectBGM = new SpStream(Properties.Resources.BGMselect2);
+            selectBGM.Volume = sliderVolume.Value;
             selectBGMplayer = new System.Media.SoundPlayer(selectBGM);
             selectBGMplayer.Play();
 
@@ -140,7 +138,9 @@ namespace EreBla
             selectBGMplayer.Dispose();
 
             // リソースを取得して選択終了BGM再生
-            selectBGM = Properties.Resources.BGMselect2;
+            selectBGM.Dispose();
+            selectBGM = new SpStream(Properties.Resources.BGMselect2);
+            selectBGM.Volume = sliderVolume.Value;
             selectBGMplayer = new System.Media.SoundPlayer(selectBGM);
             selectBGMplayer.Play();
 
@@ -180,6 +180,31 @@ namespace EreBla
                 await Task.Delay(10);
             }
             player.Dispose();
+        }
+
+        // マウスが乗っかっただけで音量調節スライダーを表示する
+        private void LabelVolumeCtrl_MouseEnter(object sender, EventArgs e)
+        {
+            sliderVolume.Visible = true;
+        }
+
+        // マウスが範囲を外れると音量調整スライダーを非表示にする
+        private void sliderVolume_MouseLeave(object sender, EventArgs e)
+        {
+            sliderVolume.Visible = false;
+        }
+
+        // マウスupで音量を再設定
+        private void sliderVolume_MouseUp(object sender, MouseEventArgs e)
+        {
+            mm.Volume = sliderVolume.Value;
+            selectBGM.Dispose();
+            selectBGMplayer.Stop();
+            selectBGMplayer.Dispose();
+            selectBGM = new SpStream(Properties.Resources.BGMselect1);
+            selectBGM.Volume = sliderVolume.Value;
+            selectBGMplayer = new System.Media.SoundPlayer(selectBGM);
+            selectBGMplayer.PlayLooping();
         }
     }
 }

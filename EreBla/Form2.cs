@@ -16,7 +16,8 @@ namespace EreBla
     public partial class GameMain : Form
     {
         public int chara = 0;                   // キャラ番号(1=エレ,2=むい)
-        private System.IO.Stream playBGM;       // BGM用IOストリーム
+        public int Volume = 60;                 // 音量
+        private SpStream playBGM;               // BGM用IOストリーム
         private System.Media.SoundPlayer playBGMplayer;   // BGM再生オブジェクト
         private NAudio.Wave.WaveOut pl;         // セリフ再生オブジェクト
         int[] CharaCard = new int[2];           // キャラの持ち手
@@ -106,11 +107,13 @@ namespace EreBla
                     this.Close();   // 誰も選んでいない
                     break;
                 case 1:             // エレ子とゲーム
-                    playBGM = Properties.Resources.BGMere1;
+                    playBGM = new SpStream(Properties.Resources.BGMere1);
+                    playBGM.Volume = Volume;
                     CharaPict.Image = Properties.Resources.ere_play;
                     break;
                 case 2:             // むいとゲーム
-                    playBGM = Properties.Resources.BGMmui1;
+                    playBGM = new SpStream(Properties.Resources.BGMmui1);
+                    playBGM.Volume = Volume;
                     CharaPict.Image = Properties.Resources.mui_play;
                     break;
                 default:            // ここには来ないはずだけど
@@ -275,10 +278,12 @@ namespace EreBla
 
             // リソースを取得してゲーム終了BGM再生
             if(chara == 1) {
-                playBGM = Properties.Resources.BGMere2;
+                playBGM = new SpStream(Properties.Resources.BGMere2);
+                playBGM.Volume = Volume;
             }
             else {
-                playBGM = Properties.Resources.BGMmui2;
+                playBGM = new SpStream(Properties.Resources.BGMmui2);
+                playBGM.Volume = Volume;
             }
             playBGMplayer = new System.Media.SoundPlayer(playBGM);
             playBGMplayer.Play();
